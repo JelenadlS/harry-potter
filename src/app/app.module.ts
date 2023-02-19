@@ -13,6 +13,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { CharacterEffects } from './src/app/store/effects/get-data.effect';
 import { increaseListReducer } from './src/app/store/reducer/increase-list.reducer';
 import { AliveComponent } from './src/app/components/alive/alive.component';
+import { likeReducer } from './src/app/store/reducer/like.reducer';
+import { LikeComponent } from './src/app/components/like/like.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,7 @@ import { AliveComponent } from './src/app/components/alive/alive.component';
     NavigationComponent, 
     HomeComponent, 
     ContentCardComponent, 
-    AliveComponent
+    AliveComponent, LikeComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,7 @@ import { AliveComponent } from './src/app/components/alive/alive.component';
     StoreModule.forRoot({
       characters: getDataReducer,
       increase: increaseListReducer,
+      likedCharacters: likeReducer
     }),
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([CharacterEffects]),

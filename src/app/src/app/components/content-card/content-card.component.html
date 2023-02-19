@@ -9,7 +9,7 @@
             <br>
         <i>{{ character.alternate_names }}</i>
     </div>
-    <div>Favorite</div>
+    <app-like [handOverId]="character.id"></app-like>
     <app-alive class="card-layout__alive--positioning" [aliveState]="character.alive" ></app-alive>
 </section>
 
