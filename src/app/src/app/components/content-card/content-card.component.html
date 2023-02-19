@@ -1,1 +1,15 @@
-<p class="card-layout">{{ character.name }}</p>
+<section class="card-layout">
+    <div class="picture__positioning">
+        <img  [src]="character.image" style="width: 100px;height: auto;">
+    </div>
+    
+    <div> 
+        <h4>{{ character.name }} </h4>
+            ({{ character.actor }})
+            <br>
+        <i>{{ character.alternate_names }}</i>
+    </div>
+    <div>Favorite</div>
+    <div class="further-info__positioning">{{character.alive}}</div>
+</section>
+
