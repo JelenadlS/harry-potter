@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { characters } from '../../services/hp-data.interface';
 
 @Component({
   selector: 'app-content-card',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./content-card.component.less']
 })
 export class ContentCardComponent implements OnInit {
+  @Input() character: any;
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit(): void {
+    console.log(this.character)
   }
 
 }

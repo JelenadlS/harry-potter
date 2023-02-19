@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { characters } from '../../services/hp-data.interface';
+import { dataService } from '../../services/get-data.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.less']
 })
 export class HomeComponent implements OnInit {
+  public characters: characters[] = [];
 
-  constructor() { }
+  constructor(
+    private dataService: dataService
+  ) { }
 
   ngOnInit(): void {
+    this.dataService.getCharacters().subscribe(
+      (characters: characters[]) => {
+        console.log(characters)
+        this.characters = characters
+      }
+    )
   }
 
 }
