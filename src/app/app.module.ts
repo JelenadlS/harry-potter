@@ -12,13 +12,15 @@ import { getDataReducer } from './src/app/store/reducer/get-data.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { CharacterEffects } from './src/app/store/effects/get-data.effect';
 import { increaseListReducer } from './src/app/store/reducer/increase-list.reducer';
+import { AliveComponent } from './src/app/components/alive/alive.component';
 
 @NgModule({
   declarations: [
     AppComponent, 
     NavigationComponent, 
     HomeComponent, 
-    ContentCardComponent
+    ContentCardComponent, 
+    AliveComponent
   ],
   imports: [
     BrowserModule,

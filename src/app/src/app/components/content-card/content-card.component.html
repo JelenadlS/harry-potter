@@ -10,6 +10,6 @@
         <i>{{ character.alternate_names }}</i>
     </div>
     <div>Favorite</div>
-    <div class="card-layout__alive--positioning">{{character.alive}}</div>
+    <app-alive class="card-layout__alive--positioning" [aliveState]="character.alive" ></app-alive>
 </section>
 
