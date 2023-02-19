@@ -8,6 +8,9 @@ import { ContentCardComponent } from './src/app/components/content-card/content-
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule } from '@angular/common/http';
+import { getDataReducer } from './src/app/store/reducer/get-data.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { CharacterEffects } from './src/app/store/effects/get-data.effect';
 
 @NgModule({
   declarations: [
@@ -19,8 +22,11 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     HttpClientModule, 
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({
+      characters: getDataReducer,
+    }),
     StoreDevtoolsModule.instrument(),
+    EffectsModule.forRoot([CharacterEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent],
