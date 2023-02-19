@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { getDataReducer } from './src/app/store/reducer/get-data.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { CharacterEffects } from './src/app/store/effects/get-data.effect';
+import { increaseListReducer } from './src/app/store/reducer/increase-list.reducer';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { CharacterEffects } from './src/app/store/effects/get-data.effect';
     HttpClientModule, 
     StoreModule.forRoot({
       characters: getDataReducer,
+      increase: increaseListReducer,
     }),
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([CharacterEffects]),

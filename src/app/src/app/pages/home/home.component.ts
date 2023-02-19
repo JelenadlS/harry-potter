@@ -3,8 +3,9 @@ import { characters } from '../../services/hp-data.interface';
 import { dataService } from '../../services/get-data.service';
 import { Store } from '@ngrx/store';
 import { GetDataAction } from '../../store/actions/get-data.action';
-import { selectCharacters } from '../../store/selector/get-data.selector';
+import { selectCharacters, selectOnlySomeCharacters } from '../../store/selector/get-data.selector';
 import { Observable } from 'rxjs';
+import { increaseListAction } from '../../store/actions/increase-list.action';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,7 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   public characters$: Observable<characters[]> = this.store.select(selectCharacters);
+  public onlySomeCharacters$: Observable<characters[]> =this.store.select(selectOnlySomeCharacters)
 
   constructor(
     private dataService: dataService,
@@ -26,5 +28,10 @@ export class HomeComponent implements OnInit {
         this.store.dispatch(GetDataAction.retrievedCharacters({characters}))
     )
   }
+
+  LoadMoreCharacters() {
+    this.store.dispatch(increaseListAction())
+  }
+
 
 }

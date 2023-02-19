@@ -1,8 +1,9 @@
 <p>HARRY POTTER</p>
 
 <app-navigation></app-navigation>
-<div *ngFor="let character of (characters$ | async)">
+<div *ngFor="let character of (onlySomeCharacters$ | async)">
     <ul class="list-style">
     <app-content-card [character]="character"></app-content-card>
 </ul>
 </div>
+<button type="button" (click)="LoadMoreCharacters()">Load more</button>
