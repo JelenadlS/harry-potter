@@ -16,6 +16,7 @@ import { AliveComponent } from './src/app/components/alive/alive.component';
 import { likeReducer } from './src/app/store/reducer/like.reducer';
 import { LikeComponent } from './src/app/components/like/like.component';
 import { ShowMoreButtonComponent } from './src/app/components/show-more-button/show-more-button.component';
+import { activeIdReducer } from './src/app/store/reducer/active-id.reducer';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ShowMoreButtonComponent } from './src/app/components/show-more-button/s
     StoreModule.forRoot({
       characters: getDataReducer,
       increase: increaseListReducer,
-      likedCharacters: likeReducer
+      likedCharacters: likeReducer,
+      activeId: activeIdReducer
     }),
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([CharacterEffects]),

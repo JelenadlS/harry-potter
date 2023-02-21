@@ -14,7 +14,8 @@
         <app-alive [aliveState]="character.alive" ></app-alive>
         <app-show-more-button 
             [character]="character" 
-            (click)="onShowMoreInfo()"> 
+            [active]="active"
+            (click)="onShowMoreInfo(character.id)"> 
         </app-show-more-button>
     </div>
 </section>

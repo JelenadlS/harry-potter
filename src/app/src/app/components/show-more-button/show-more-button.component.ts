@@ -7,14 +7,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ShowMoreButtonComponent implements OnInit {
   @Input() character: any;
-  public active: boolean = true;
+  @Input() active:boolean = false;
 
-  constructor() { }
+
+  constructor(
+  ) { }
 
   ngOnInit(): void {
-  }
-
-  showFurtherInfo(){
-    this.active = !this.active
   }
 }
