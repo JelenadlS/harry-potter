@@ -1,9 +1,11 @@
-<p>HARRY POTTER</p>
+<div class="page_positioning">
+    <p>HARRY POTTER</p>
 
-<app-navigation></app-navigation>
-<div *ngFor="let character of (onlySomeCharacters$ | async)">
-    <ul class="list-style">
-    <app-content-card [character]="character"></app-content-card>
-</ul>
+    <app-navigation></app-navigation>
+    <div *ngFor="let character of (onlySomeCharacters$ | async)">
+        <ul class="list-style">
+        <app-content-card [character]="character"></app-content-card>
+    </ul>
+    </div>
+    <button type="button" (click)="LoadMoreCharacters()">Load more</button>
 </div>
-<button type="button" (click)="LoadMoreCharacters()">Load more</button>

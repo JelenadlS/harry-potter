@@ -1,4 +1,4 @@
-<section class="card-layout">
+<section class="card-layout" [ngStyle]="{'border-radius': active ? '5px 5px 0 0' : '5px'}">
     <div class="card-layout__picture--positioning">
         <img  [src]="character.image" style="width: 100px;height: auto;">
     </div>
@@ -9,7 +9,9 @@
             <br>
         <i>{{ character.alternate_names }}</i>
     </div>
+
     <app-like [handOverId]="character.id"></app-like>
+
     <div class="card-layout__alive--positioning">
         <app-alive [aliveState]="character.alive" ></app-alive>
         <app-show-more-button 
@@ -19,6 +21,7 @@
         </app-show-more-button>
     </div>
 </section>
+
 <div *ngIf="active">
-    <div>{{ character.ancestry }}</div>
+    <app-further-info [character]="character" ></app-further-info>
 </div>
