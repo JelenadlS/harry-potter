@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { characters } from '../../services/hp-data.interface';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-content-card',
@@ -8,11 +8,16 @@ import { characters } from '../../services/hp-data.interface';
 })
 export class ContentCardComponent implements OnInit {
   @Input() character: any;
+  public active: boolean = false;
 
   constructor(
   ) { }
 
   ngOnInit(): void {
+  }
+
+  onShowMoreInfo(){
+     this.active = !this.active
   }
 
 }

@@ -15,6 +15,7 @@ import { increaseListReducer } from './src/app/store/reducer/increase-list.reduc
 import { AliveComponent } from './src/app/components/alive/alive.component';
 import { likeReducer } from './src/app/store/reducer/like.reducer';
 import { LikeComponent } from './src/app/components/like/like.component';
+import { ShowMoreButtonComponent } from './src/app/components/show-more-button/show-more-button.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LikeComponent } from './src/app/components/like/like.component';
     NavigationComponent, 
     HomeComponent, 
     ContentCardComponent, 
-    AliveComponent, LikeComponent
+    AliveComponent, LikeComponent, 
+    ShowMoreButtonComponent
   ],
   imports: [
     BrowserModule,

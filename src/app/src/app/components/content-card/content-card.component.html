@@ -10,6 +10,14 @@
         <i>{{ character.alternate_names }}</i>
     </div>
     <app-like [handOverId]="character.id"></app-like>
-    <app-alive class="card-layout__alive--positioning" [aliveState]="character.alive" ></app-alive>
+    <div class="card-layout__alive--positioning">
+        <app-alive [aliveState]="character.alive" ></app-alive>
+        <app-show-more-button 
+            [character]="character" 
+            (click)="onShowMoreInfo()"> 
+        </app-show-more-button>
+    </div>
 </section>
-
+<div *ngIf="active">
+    <div>{{ character.ancestry }}</div>
+</div>
