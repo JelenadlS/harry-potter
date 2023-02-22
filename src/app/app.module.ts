@@ -17,7 +17,7 @@ import { likeReducer } from './src/app/store/reducer/like.reducer';
 import { LikeComponent } from './src/app/components/like/like.component';
 import { ShowMoreButtonComponent } from './src/app/components/show-more-button/show-more-button.component';
 import { activeIdReducer } from './src/app/store/reducer/active-id.reducer';
-import { FurtherInfoComponent } from './src/app/further-info/further-info.component';
+import { FurtherInfoComponent } from './src/app/components/further-info/further-info.component';
 
 @NgModule({
   declarations: [

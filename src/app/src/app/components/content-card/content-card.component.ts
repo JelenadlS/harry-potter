@@ -13,7 +13,7 @@ export class ContentCardComponent implements OnInit {
   @Input() character: any;
   public active: boolean = false;
   public activeId$:Observable<string> = this.store.select(activeIdSelector);
-
+  
   constructor(
     private store: Store<{id:string}>
   ) { }
