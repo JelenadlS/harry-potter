@@ -3,9 +3,10 @@ import { characters } from '../../services/hp-data.interface';
 import { dataService } from '../../services/get-data.service';
 import { Store } from '@ngrx/store';
 import { GetDataAction } from '../../store/actions/get-data.action';
-import { selectCharacters, selectOnlySomeCharacters } from '../../store/selector/get-data.selector';
 import { Observable } from 'rxjs';
 import { increaseListAction } from '../../store/actions/increase-list.action';
+import { SelectedHouseAction } from '../../store/actions/filter-house.action';
+import { filteredListByHouse } from '../../store/selector/filter-house.selector';
 
 @Component({
   selector: 'app-home',
@@ -13,8 +14,8 @@ import { increaseListAction } from '../../store/actions/increase-list.action';
   styleUrls: ['./home.component.less']
 })
 export class HomeComponent implements OnInit {
-  public characters$: Observable<characters[]> = this.store.select(selectCharacters);
-  public onlySomeCharacters$: Observable<characters[]> =this.store.select(selectOnlySomeCharacters)
+  public filteredList$:Observable<characters[]> = this.store.select(filteredListByHouse)
+  public eachHouseOnce: string[] = [];
 
   constructor(
     private dataService: dataService,
@@ -24,14 +25,29 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.dataService
       .getCharacters()
-      .subscribe((characters: characters[]) =>
-        this.store.dispatch(GetDataAction.retrievedCharacters({characters}))
+      .subscribe((characters: characters[]) =>{
+        this.store.dispatch(GetDataAction.retrievedCharacters({characters}));
+        this.createEachHouseOnce(characters)
+      }
     )
+    
   }
 
   LoadMoreCharacters() {
     this.store.dispatch(increaseListAction())
   }
 
+  createEachHouseOnce(character: characters[]){
+    const houseValueOnce = [
+      ...new Set(character.map(activity =>
+        activity.house
+      )),
+    ]
+    this.eachHouseOnce = houseValueOnce.filter(entry => entry)
+  }
+
+  onFilterHouse(house: string) {
+    this.store.dispatch(SelectedHouseAction({house}))
+  }
 
 }

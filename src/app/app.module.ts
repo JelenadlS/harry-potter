@@ -18,6 +18,7 @@ import { LikeComponent } from './src/app/components/like/like.component';
 import { ShowMoreButtonComponent } from './src/app/components/show-more-button/show-more-button.component';
 import { activeIdReducer } from './src/app/store/reducer/active-id.reducer';
 import { FurtherInfoComponent } from './src/app/components/further-info/further-info.component';
+import { selectedHouseReducer } from './src/app/store/reducer/filter-house.reducer';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FurtherInfoComponent } from './src/app/components/further-info/further-
       characters: getDataReducer,
       increase: increaseListReducer,
       likedCharacters: likeReducer,
-      activeId: activeIdReducer
+      activeId: activeIdReducer,
+      selectedHouse: selectedHouseReducer
     }),
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([CharacterEffects]),
