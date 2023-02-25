@@ -20,7 +20,6 @@ export class ContentCardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.character.image)
   }
 
 onShowMoreInfo(id: string){

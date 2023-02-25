@@ -26,7 +26,8 @@ import { selectedHouseReducer } from './src/app/store/reducer/filter-house.reduc
     NavigationComponent, 
     HomeComponent, 
     ContentCardComponent, 
-    AliveComponent, LikeComponent, 
+    AliveComponent, 
+    LikeComponent, 
     ShowMoreButtonComponent, 
     FurtherInfoComponent
   ],
