@@ -25,6 +25,8 @@ import { FilterByAncestryComponent } from './src/app/components/filter-by-ancest
 import { selectedAncestryReducer } from './src/app/store/reducer/filter-ancestry.reducer';
 import { FilterByStaffOrStudentComponent } from './src/app/components/filter-by-staff-or-student/filter-by-staff-or-student.component';
 import { staffOrStudentReducer } from './src/app/store/reducer/filter-staff-or-student.reducer';
+import { searchReducer } from './src/app/store/reducer/search.reducer';
+import { SearchBarComponent } from './src/app/components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,10 @@ import { staffOrStudentReducer } from './src/app/store/reducer/filter-staff-or-s
     ShowMoreButtonComponent, 
     FurtherInfoComponent, 
     FilterBoxComponent, 
-    FilterByHouseComponent, FilterByAncestryComponent, FilterByStaffOrStudentComponent
+    FilterByHouseComponent, 
+    FilterByAncestryComponent, 
+    FilterByStaffOrStudentComponent, 
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +55,7 @@ import { staffOrStudentReducer } from './src/app/store/reducer/filter-staff-or-s
       selectedHouse: selectedHouseReducer,
       selectedAncestry: selectedAncestryReducer,
       staffOrStudent: staffOrStudentReducer,
+      search: searchReducer,
     }),
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([CharacterEffects]),

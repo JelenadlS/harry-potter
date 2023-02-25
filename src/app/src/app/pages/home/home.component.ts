@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { characters } from '../../services/hp-data.interface';
 import { dataService } from '../../services/get-data.service';
 import { Store } from '@ngrx/store';
@@ -39,14 +39,13 @@ export class HomeComponent implements OnInit {
         this.eachAncestryOnce = this.filterService.eachAncestryOnce
       }
     )
-    this.filteredList$.subscribe((characters: characters[]) =>{
-      this.lengthOfCharactersArray = characters.length
-      this.increase.subscribe((incr: number) => {
-        this.filteredList = characters.slice(0, incr)
-      })
-      
-    }
-
+    this.filteredList$
+    .subscribe((characters: characters[]) =>{
+        this.lengthOfCharactersArray = characters.length
+        this.increase.subscribe((incr: number) => {
+          this.filteredList = characters.slice(0, incr)
+        })
+      }
     )
   }
 
