@@ -26,7 +26,7 @@ export const filteredListByHouse = createSelector(
                 filteredByAncestry = filterAncestryRule(filteredByHouse, ancestry)
                 newlyfiltered = filterStaffOrStudentRule(filteredByAncestry, staffOrStudent)
         
-        newlyfiltered = newlyfiltered.slice(0, increase)
+        // newlyfiltered = newlyfiltered.slice(0, increase)
         
         return newlyfiltered 
     }

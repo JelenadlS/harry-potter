@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { increaseListAction } from '../../store/actions/increase-list.action';
 import { filteredListByHouse } from '../../store/selector/filter-characters.selector';
 import { filterService } from '../../services/filter.service';
+import { increaseSelector } from '../../store/selector/increase.selector';
 
 @Component({
   selector: 'app-home',
@@ -14,9 +15,12 @@ import { filterService } from '../../services/filter.service';
   styleUrls: ['./home.component.less']
 })
 export class HomeComponent implements OnInit {
-  public filteredList$:Observable<characters[]> = this.store.select(filteredListByHouse)
+  public filteredList$:Observable<characters[]> = this.store.select(filteredListByHouse);
+  public filteredList: characters[] = [];
   public eachHouseOnce: string[] = [];
   public eachAncestryOnce: string[] = [];
+  public lengthOfCharactersArray: number = 0;
+  public increase: Observable<number> = this.store.select(increaseSelector);
 
   constructor(
     private dataService: dataService,
@@ -34,6 +38,15 @@ export class HomeComponent implements OnInit {
         this.filterService.getEachAncestryOnce(characters)
         this.eachAncestryOnce = this.filterService.eachAncestryOnce
       }
+    )
+    this.filteredList$.subscribe((characters: characters[]) =>{
+      this.lengthOfCharactersArray = characters.length
+      this.increase.subscribe((incr: number) => {
+        this.filteredList = characters.slice(0, incr)
+      })
+      
+    }
+
     )
   }
 

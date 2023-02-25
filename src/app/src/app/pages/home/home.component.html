@@ -11,14 +11,14 @@
         </div>
 
         <div>
-            <div *ngFor="let character of (filteredList$ | async)">
+            <div *ngFor="let character of filteredList ">
                 <ul class="list-style">
                 <app-content-card [character]="character"
                 ></app-content-card>
                 </ul>
             </div>
-            <div class="card-layout">there is no further content <br> please choose another filter</div>
-            <button type="button" (click)="LoadMoreCharacters()">Load more</button>
+            <div class="card-layout" *ngIf="(lengthOfCharactersArray === 0)">there is no further content <br> please choose another filter</div>
+            <button type="button" (click)="LoadMoreCharacters()" *ngIf="(lengthOfCharactersArray > 4)">Load more</button>
         </div>
         
     </div>
