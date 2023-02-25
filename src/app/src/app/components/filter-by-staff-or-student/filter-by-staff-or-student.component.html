@@ -1,0 +1,23 @@
+<p>Filter by Staff or Student</p>
+<fieldset class="filter__positioning">
+    <div>
+        <input type="radio" id="allCharacters" name="staffOrStudent" value="allCharacters"
+        checked
+        (click)="onFilterStaffOrStudent('')"
+        > 
+        <label for="allCharacters">All</label>
+    </div>
+    <div>
+        <input type="radio" id="staff" name="staffOrStudent" value="staff"
+        (click)="onFilterStaffOrStudent('staff')"
+        > 
+        <label for="staff">Staff</label>
+    </div>
+    <div>
+        <input type="radio" id="students" name="staffOrStudent" value="students"
+        (click)="onFilterStaffOrStudent('student')"
+        > 
+        <label for="students">Student</label>
+    </div>
+
+</fieldset>
