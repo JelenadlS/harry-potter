@@ -1,13 +1,17 @@
 <section class="card-layout" [ngStyle]="{'border-radius': active ? '5px 5px 0 0' : '5px'}">
     <div class="card-layout__picture--positioning">
-        <img  [src]="character.image" style="width: 100px;height: auto;">
+        <img  
+        [src]="character.image === '' ? 'assets/placeholder_no_image.svg' : character.image" 
+        style="width: 100px;height: auto;" 
+        >
     </div>
     
     <div> 
         <h4>{{ character.name }} </h4>
-            ({{ character.actor }})
+        <div *ngIf="character.actor != ''">({{ character.actor }})</div>
+            
             <br>
-        <i>{{ character.alternate_names }}</i>
+        <i *ngIf="character.alternate_names != ''">Nickname: {{ character.alternate_names }}</i>
     </div>
 
     <app-like [handOverId]="character.id"></app-like>

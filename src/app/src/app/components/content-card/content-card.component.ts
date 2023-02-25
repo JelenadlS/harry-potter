@@ -13,12 +13,14 @@ export class ContentCardComponent implements OnInit {
   @Input() character: any;
   public active: boolean = false;
   public activeId$:Observable<string> = this.store.select(activeIdSelector);
+  public placeholderImage:string = '/./src/assets/images/placeholder_no_image.svg'
   
   constructor(
     private store: Store<{id:string}>
   ) { }
 
   ngOnInit(): void {
+    console.log(this.character.image)
   }
 
 onShowMoreInfo(id: string){
