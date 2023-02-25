@@ -5,7 +5,6 @@ import { Store } from '@ngrx/store';
 import { GetDataAction } from '../../store/actions/get-data.action';
 import { Observable } from 'rxjs';
 import { increaseListAction } from '../../store/actions/increase-list.action';
-import { SelectedHouseAction } from '../../store/actions/filter-house.action';
 import { filteredListByHouse } from '../../store/selector/filter-house.selector';
 import { filterService } from '../../services/filter.service';
 

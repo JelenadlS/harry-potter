@@ -1,6 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { SelectedHouseAction } from '../../store/actions/filter-house.action';
 
 @Component({
   selector: 'app-filter-box',

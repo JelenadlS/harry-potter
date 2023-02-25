@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { SelectedHouseAction } from '../../store/actions/filter-house.action';
+import { FilterGroupAction } from '../../store/actions/filter-house.action';
 
 @Component({
   selector: 'app-filter-by-house',
@@ -18,7 +18,7 @@ export class FilterByHouseComponent implements OnInit {
   }
 
   onFilterHouse(house: string) {
-    this.store.dispatch(SelectedHouseAction({house}))
+    this.store.dispatch(FilterGroupAction.selectedHouse({house}))
   }
 
 }

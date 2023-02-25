@@ -1,11 +1,12 @@
 import { createReducer, on } from "@ngrx/store";
-import { SelectedHouseAction } from "../actions/filter-house.action";
+import { FilterGroupAction } from "../actions/filter-house.action";
 
 export const initialState: string = '';
 
 export const selectedHouseReducer = createReducer(
     initialState,
-    on(SelectedHouseAction, (state, action) => {
+    on(FilterGroupAction.selectedHouse, (state, action) => {
+        console.log('test')
     return action.house
     }),
   );
