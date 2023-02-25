@@ -7,6 +7,7 @@ import { characters } from "./hp-data.interface";
 })
 export class filterService {
     public eachHouseOnce: string[] = [];
+    public eachAncestryOnce: string[] = []
 
     constructor(){}
 
@@ -17,8 +18,17 @@ export class filterService {
             )),
           ]
         this.eachHouseOnce = houseValueOnce.filter(entry => entry)
-        console.log(this.eachHouseOnce)
       return this.eachHouseOnce
     }
+
+    getEachAncestryOnce(characters: characters[]): string[]{
+      const ancestryValueOnce = [
+          ...new Set(characters.map(activity =>
+            activity.ancestry
+          )),
+        ]
+      this.eachAncestryOnce = ancestryValueOnce.filter(entry => entry)
+    return this.eachAncestryOnce
+  }
 
 }

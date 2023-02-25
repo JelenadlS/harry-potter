@@ -1,2 +1,16 @@
-<p>filter by ancestry </p>
-activity.ancestry
+<p>Filter by acestry</p>
+<fieldset class="filter__positioning">
+    <div>
+    <input type="radio" id="allAncestry" name="ancestry" value="allAncestry"
+    checked
+    (click)="onFilterAncestry('')"
+    > 
+    <label for="allAncestry">All</label>
+    </div>
+    <div *ngFor="let ancestry of eachAncestryOnce">
+    <input type="radio" id="{{ ancestry }}" name="ancestry" value="{{ ancestry }}"
+    (click)="onFilterAncestry(ancestry)"
+    > 
+    <label for="{{ ancestry }}">{{ ancestry }}</label>
+    </div>
+</fieldset>

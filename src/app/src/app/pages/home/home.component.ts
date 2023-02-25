@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { GetDataAction } from '../../store/actions/get-data.action';
 import { Observable } from 'rxjs';
 import { increaseListAction } from '../../store/actions/increase-list.action';
-import { filteredListByHouse } from '../../store/selector/filter-house.selector';
+import { filteredListByHouse } from '../../store/selector/filter-characters.selector';
 import { filterService } from '../../services/filter.service';
 
 @Component({
@@ -16,6 +16,7 @@ import { filterService } from '../../services/filter.service';
 export class HomeComponent implements OnInit {
   public filteredList$:Observable<characters[]> = this.store.select(filteredListByHouse)
   public eachHouseOnce: string[] = [];
+  public eachAncestryOnce: string[] = [];
 
   constructor(
     private dataService: dataService,
@@ -30,6 +31,8 @@ export class HomeComponent implements OnInit {
         this.store.dispatch(GetDataAction.retrievedCharacters({characters}));
         this.filterService.getEachHouseOnce(characters)
         this.eachHouseOnce = this.filterService.eachHouseOnce
+        this.filterService.getEachAncestryOnce(characters)
+        this.eachAncestryOnce = this.filterService.eachAncestryOnce
       }
     )
   }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { FilterGroupAction } from '../../store/actions/filter-house.action';
 
 @Component({
   selector: 'app-filter-by-ancestry',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filter-by-ancestry.component.less']
 })
 export class FilterByAncestryComponent implements OnInit {
-
-  constructor() { }
+  @Input() eachAncestryOnce: string[] = [];
+  
+  constructor(
+    private store: Store,
+  ) { }
 
   ngOnInit(): void {
   }
 
+  onFilterAncestry(ancestry:string){
+    this.store.dispatch(FilterGroupAction.selectedAncestry({ancestry}))
+  }
 }

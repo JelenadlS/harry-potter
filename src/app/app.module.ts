@@ -22,6 +22,7 @@ import { selectedHouseReducer } from './src/app/store/reducer/filter-house.reduc
 import { FilterBoxComponent } from './src/app/components/filter-box/filter-box.component';
 import { FilterByHouseComponent } from './src/app/components/filter-by-house/filter-by-house.component';
 import { FilterByAncestryComponent } from './src/app/components/filter-by-ancestry/filter-by-ancestry.component';
+import { selectedAncestryReducer } from './src/app/store/reducer/filter-ancestry.reducer';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { FilterByAncestryComponent } from './src/app/components/filter-by-ancest
       increase: increaseListReducer,
       likedCharacters: likeReducer,
       activeId: activeIdReducer,
-      selectedHouse: selectedHouseReducer
+      selectedHouse: selectedHouseReducer,
+      selectedAncestry: selectedAncestryReducer,
     }),
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([CharacterEffects]),
