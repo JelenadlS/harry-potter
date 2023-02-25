@@ -28,9 +28,24 @@ export class HomeComponent implements OnInit {
       .subscribe((characters: characters[]) =>{
         this.store.dispatch(GetDataAction.retrievedCharacters({characters}));
         this.createEachHouseOnce(characters)
+        console.log(characters)
+        console.log(...new Set(characters.map(activity =>
+          activity.ancestry
+        )),)
+        console.log(...new Set(characters.map(activity =>
+          activity.hogwartsStaff
+        )),)
+        console.log(...new Set(characters.map(activity =>
+          activity.hogwartsStudent
+        )),)
+        console.log(...new Set(characters.map(activity =>
+          activity.species
+        )),)
+        console.log(...new Set(characters.map(activity =>
+          activity.wizard
+        )),)
       }
     )
-    
   }
 
   LoadMoreCharacters() {
@@ -44,10 +59,6 @@ export class HomeComponent implements OnInit {
       )),
     ]
     this.eachHouseOnce = houseValueOnce.filter(entry => entry)
-  }
-
-  onFilterHouse(house: string) {
-    this.store.dispatch(SelectedHouseAction({house}))
   }
 
 }

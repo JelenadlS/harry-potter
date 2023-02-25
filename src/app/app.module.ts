@@ -19,6 +19,7 @@ import { ShowMoreButtonComponent } from './src/app/components/show-more-button/s
 import { activeIdReducer } from './src/app/store/reducer/active-id.reducer';
 import { FurtherInfoComponent } from './src/app/components/further-info/further-info.component';
 import { selectedHouseReducer } from './src/app/store/reducer/filter-house.reducer';
+import { FilterBoxComponent } from './src/app/components/filter-box/filter-box.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { selectedHouseReducer } from './src/app/store/reducer/filter-house.reduc
     AliveComponent, 
     LikeComponent, 
     ShowMoreButtonComponent, 
-    FurtherInfoComponent
+    FurtherInfoComponent, 
+    FilterBoxComponent
   ],
   imports: [
     BrowserModule,

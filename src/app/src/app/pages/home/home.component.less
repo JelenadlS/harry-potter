@@ -16,20 +16,23 @@ button {
     }
 }
 
-.page_positioning {
+.page{
+    &__positioning {
     width: 500px;
     margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr auto;
+    justify-items: center;
+    }
 
     &--filter {
-        text-align: center;
+        margin-top: 20px;
+    }
 
+    &--content {
         &__positioning {
-            display: flex;
-            border: none;
-            gap: 10px;
+            display: grid;
+            grid-template-columns: 200px auto;
         }
     }
 }

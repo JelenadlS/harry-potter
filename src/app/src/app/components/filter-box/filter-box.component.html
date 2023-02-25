@@ -1,0 +1,16 @@
+<p>Filter</p>
+<fieldset class="filter__positioning">
+    <div>
+        <input type="radio" id="all" name="house" value="all"
+        checked
+        (click)="onFilterHouse('')"
+        > 
+        <label for="all">All</label>
+        </div>
+    <div *ngFor="let house of eachHouseOnce">
+    <input type="radio" id="{{ house }}" name="house" value="{{ house }}"
+    (click)="onFilterHouse(house)"
+    > 
+    <label for="{{ house }}">{{ house }}</label>
+    </div>
+</fieldset>
