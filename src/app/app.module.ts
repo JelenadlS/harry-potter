@@ -21,6 +21,7 @@ import { FurtherInfoComponent } from './src/app/components/further-info/further-
 import { selectedHouseReducer } from './src/app/store/reducer/filter-house.reducer';
 import { FilterBoxComponent } from './src/app/components/filter-box/filter-box.component';
 import { FilterByHouseComponent } from './src/app/components/filter-by-house/filter-by-house.component';
+import { FilterByAncestryComponent } from './src/app/components/filter-by-ancestry/filter-by-ancestry.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { FilterByHouseComponent } from './src/app/components/filter-by-house/fil
     ShowMoreButtonComponent, 
     FurtherInfoComponent, 
     FilterBoxComponent, 
-    FilterByHouseComponent
+    FilterByHouseComponent, FilterByAncestryComponent
   ],
   imports: [
     BrowserModule,

@@ -8,13 +8,12 @@ import { SelectedHouseAction } from '../../store/actions/filter-house.action';
   styleUrls: ['./filter-box.component.less']
 })
 export class FilterBoxComponent implements OnInit {
- @Input() eachHouseOnce: string[] = [];
+  @Input() eachHouseOnce: string[] = [];
 
   constructor(
   ) { }
 
   ngOnInit(): void {
   }
-
 
 }

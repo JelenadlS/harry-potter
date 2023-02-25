@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { increaseListAction } from '../../store/actions/increase-list.action';
 import { SelectedHouseAction } from '../../store/actions/filter-house.action';
 import { filteredListByHouse } from '../../store/selector/filter-house.selector';
+import { filterService } from '../../services/filter.service';
 
 @Component({
   selector: 'app-home',
@@ -19,6 +20,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private dataService: dataService,
+    private filterService: filterService,
     private store: Store,
   ) { }
 
@@ -27,7 +29,8 @@ export class HomeComponent implements OnInit {
       .getCharacters()
       .subscribe((characters: characters[]) =>{
         this.store.dispatch(GetDataAction.retrievedCharacters({characters}));
-        this.createEachHouseOnce(characters)
+        this.filterService.getEachHouseOnce(characters)
+        this.eachHouseOnce = this.filterService.eachHouseOnce
       }
     )
   }
@@ -36,13 +39,5 @@ export class HomeComponent implements OnInit {
     this.store.dispatch(increaseListAction())
   }
 
-  createEachHouseOnce(character: characters[]){
-    const houseValueOnce = [
-      ...new Set(character.map(activity =>
-        activity.house
-      )),
-    ]
-    this.eachHouseOnce = houseValueOnce.filter(entry => entry)
-  }
 
 }
