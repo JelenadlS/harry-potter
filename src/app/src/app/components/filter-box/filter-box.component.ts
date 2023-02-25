@@ -11,14 +11,10 @@ export class FilterBoxComponent implements OnInit {
  @Input() eachHouseOnce: string[] = [];
 
   constructor(
-    private store: Store,
   ) { }
 
   ngOnInit(): void {
   }
 
-  onFilterHouse(house: string) {
-    this.store.dispatch(SelectedHouseAction({house}))
-  }
 
 }

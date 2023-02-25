@@ -1,16 +1,12 @@
 <p>Filter</p>
-<fieldset class="filter__positioning">
-    <div>
-        <input type="radio" id="all" name="house" value="all"
-        checked
-        (click)="onFilterHouse('')"
-        > 
-        <label for="all">All</label>
-        </div>
-    <div *ngFor="let house of eachHouseOnce">
-    <input type="radio" id="{{ house }}" name="house" value="{{ house }}"
-    (click)="onFilterHouse(house)"
-    > 
-    <label for="{{ house }}">{{ house }}</label>
-    </div>
-</fieldset>
+<hr>
+<app-filter-by-house [eachHouseOnce]="eachHouseOnce"></app-filter-by-house>
+<hr>
+activity.ancestry
+<hr>
+activity.hogwartsStaff and hogwartsStudent
+<hr>
+species
+<hr>
+activity.wizard
+<hr>
