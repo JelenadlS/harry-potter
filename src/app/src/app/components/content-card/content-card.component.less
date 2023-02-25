@@ -1,0 +1,22 @@
+.card-layout {
+    border: 1px solid rgba(71, 39, 35, 0.15);
+    margin: 15px;
+    
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    column-gap: 10px;
+    width: 400px;
+
+
+
+    &__picture--positioning {
+        grid-row-start: span 2;
+        align-self: center;
+    }
+
+    &__alive--positioning {
+        grid-column-start: 3;
+    }
+}
