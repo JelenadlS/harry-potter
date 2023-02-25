@@ -18,21 +18,20 @@ export class LikeComponent implements OnInit {
     private store: Store<{array:string[]}>) { }
 
   ngOnInit(): void {
+    this.likedBars$.subscribe((idArray:string[]) => {
+      const found: boolean = idArray.includes(this.handOverId)
+        if(found) {
+          this.liked = true
+        }
+        if(!found){
+          this.liked = false
+        }
+    })
+    
   }
 
-  handleLikedBar(id: string): boolean {
+  handleLikedBar(id: string): void {
     this.store.dispatch(LikeAction({id}))
-    this.likedBars$.subscribe((idArray:string[]) => {
-        const found: boolean = idArray.includes(id)    
-          if(found) {
-            this.liked = true
-          }
-          if(!found){
-            this.liked = false
-          }
-    }
-    )
-  return this.liked
   }
 
 }
