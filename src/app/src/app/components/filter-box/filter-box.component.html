@@ -7,11 +7,11 @@ activity.wizard
 <p>Filter by {{title}}</p>
 <fieldset class="filter__positioning">
     <div>
-    <input type="radio" id="all" name="{{title}}" value="all"
+    <input type="radio" id="all{{title}}" name="{{title}}" value="all{{title}}"
     checked
     (click)="onFilter('', title)"
     > 
-    <label for="all">All</label>
+    <label for="all{{title}}">All</label>
     </div>
     <div  *ngFor="let radio of radios">
         <input 
