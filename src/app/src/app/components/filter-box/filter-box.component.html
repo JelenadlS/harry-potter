@@ -1,12 +1,30 @@
-<p>Filter</p>
-<hr>
-<app-filter-by-house [eachHouseOnce]="eachHouseOnce"></app-filter-by-house>
-<hr>
-<app-filter-by-ancestry [eachAncestryOnce]="eachAncestryOnce"></app-filter-by-ancestry>
-<hr>
-<app-filter-by-staff-or-student></app-filter-by-staff-or-student>
-<hr>
+
+<!-- <hr>
 species
 <hr>
 activity.wizard
+<hr> -->
+<p>Filter by {{title}}</p>
+<fieldset class="filter__positioning">
+    <div>
+    <input type="radio" id="all" name="{{title}}" value="all"
+    checked
+    (click)="onFilter('', title)"
+    > 
+    <label for="all">All</label>
+    </div>
+    <div  *ngFor="let radio of radios">
+        <input 
+        type="radio" 
+        id="{{ radio }}" 
+        name="{{ title }}" 
+        value="{{ radio }}"
+        (click)="onFilter(radio, title)"
+        > 
+        <label 
+        for="{{ radio }}">
+            {{ radio }}
+        </label>
+    </div>
+</fieldset>
 <hr>

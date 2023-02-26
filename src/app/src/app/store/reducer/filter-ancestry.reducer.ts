@@ -6,6 +6,6 @@ export const initialState: string = '';
 export const selectedAncestryReducer = createReducer(
     initialState,
     on(FilterGroupAction.selectedAncestry, (state, action) => {
-    return action.ancestry
+    return action.value
     })
   );

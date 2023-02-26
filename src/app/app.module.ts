@@ -20,10 +20,7 @@ import { activeIdReducer } from './src/app/store/reducer/active-id.reducer';
 import { FurtherInfoComponent } from './src/app/components/further-info/further-info.component';
 import { selectedHouseReducer } from './src/app/store/reducer/filter-house.reducer';
 import { FilterBoxComponent } from './src/app/components/filter-box/filter-box.component';
-import { FilterByHouseComponent } from './src/app/components/filter-by-house/filter-by-house.component';
-import { FilterByAncestryComponent } from './src/app/components/filter-by-ancestry/filter-by-ancestry.component';
 import { selectedAncestryReducer } from './src/app/store/reducer/filter-ancestry.reducer';
-import { FilterByStaffOrStudentComponent } from './src/app/components/filter-by-staff-or-student/filter-by-staff-or-student.component';
 import { staffOrStudentReducer } from './src/app/store/reducer/filter-staff-or-student.reducer';
 import { searchReducer } from './src/app/store/reducer/search.reducer';
 import { SearchBarComponent } from './src/app/components/search-bar/search-bar.component';
@@ -39,9 +36,6 @@ import { SearchBarComponent } from './src/app/components/search-bar/search-bar.c
     ShowMoreButtonComponent, 
     FurtherInfoComponent, 
     FilterBoxComponent, 
-    FilterByHouseComponent, 
-    FilterByAncestryComponent, 
-    FilterByStaffOrStudentComponent, 
     SearchBarComponent
   ],
   imports: [

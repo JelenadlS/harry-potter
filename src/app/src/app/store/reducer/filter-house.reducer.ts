@@ -6,6 +6,6 @@ export const initialState: string = '';
 export const selectedHouseReducer = createReducer(
     initialState,
     on(FilterGroupAction.selectedHouse, (state, action) => {
-    return action.house
+    return action.value
     }),
   );

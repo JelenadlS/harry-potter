@@ -6,6 +6,6 @@ export const initialState: string = '';
 export const staffOrStudentReducer = createReducer(
     initialState,
     on(FilterGroupAction.staffOrStudent, (state, action) => {
-    return state = action.staffOrStudent
+    return state = action.value
     }),
   );

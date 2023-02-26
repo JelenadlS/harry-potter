@@ -6,9 +6,18 @@
 
     <div class="page--content__positioning">
         <div class="page--filter">
+            <p>Filter</p>
             <app-filter-box 
-            [eachHouseOnce]="eachHouseOnce"
-            [eachAncestryOnce]="eachAncestryOnce"
+            [title]="'houses'"
+            [radios]="eachHouseOnce"
+            ></app-filter-box>
+            <app-filter-box 
+            [title]="'ancestry'"
+            [radios]="eachAncestryOnce"
+            ></app-filter-box>
+            <app-filter-box 
+            [title]="'staff or student'"
+            [radios]="staffOrStudent"
             ></app-filter-box>
         </div>
 

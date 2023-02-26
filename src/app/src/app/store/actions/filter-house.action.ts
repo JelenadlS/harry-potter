@@ -7,8 +7,8 @@ export const SELECTEDANCESTRY = '[SELECTEDANCESTRY] Selected Ancestry';
 export const FilterGroupAction = createActionGroup({
     source: 'filter',
     events: {
-        'Selected House': props<{ house: string }>(),
-        'Selected Ancestry': props<{ ancestry: string }>(),
-        'Staff or Student': props<{ staffOrStudent: string }>(),
+        'Selected House': props<{ value: string }>(),
+        'Selected Ancestry': props<{ value: string }>(),
+        'Staff or Student': props<{ value: string }>(),
     },
 });

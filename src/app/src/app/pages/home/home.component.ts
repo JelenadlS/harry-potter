@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   public filteredList: characters[] = [];
   public eachHouseOnce: string[] = [];
   public eachAncestryOnce: string[] = [];
+  public staffOrStudent: string[] = ['staff', 'student'];
   public lengthOfCharactersArray: number = 0;
   public increase: Observable<number> = this.store.select(increaseSelector);
 
@@ -52,4 +53,9 @@ export class HomeComponent implements OnInit {
   LoadMoreCharacters() {
     this.store.dispatch(increaseListAction())
   }
+
+  // Refactor styles, kann man die filter zusammenfassen und nach unten reichen?
+  // Ordnerstruktur, check mit dependencyCrwaler
+  // Like seite erstellen
+  // eine Note zu gelikten sachen hinzufügen
 }
