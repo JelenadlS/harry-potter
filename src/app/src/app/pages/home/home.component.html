@@ -2,7 +2,7 @@
     <p>HARRY POTTER</p>
 
     <app-navigation></app-navigation>
-    <app-search-bar></app-search-bar>
+    <app-search-bar [handleResetFilters]="handleResetFilters"></app-search-bar>
 
     <div class="page--content__positioning">
         <div class="page--filter">
@@ -29,7 +29,7 @@
                 </ul>
             </div>
             <div class="card-layout" *ngIf="(lengthOfCharactersArray === 0)">there is no further content <br> please choose another filter</div>
-            <button type="button" (click)="LoadMoreCharacters()" *ngIf="(lengthOfCharactersArray > 4)">Load more</button>
+            <button type="button" (click)="loadMoreCharacters()" *ngIf="(lengthOfCharactersArray > 4)">Load more</button>
         </div>
         
     </div>

@@ -5,9 +5,10 @@ import { Store } from '@ngrx/store';
 import { GetDataAction } from '../../store/actions/get-data.action';
 import { Observable } from 'rxjs';
 import { increaseListAction } from '../../store/actions/increase-list.action';
-import { filteredListByHouse } from '../../store/selector/filter-characters.selector';
+import { filteredList } from '../../store/selector/filter-characters.selector';
 import { filterService } from '../../services/filter.service';
 import { increaseSelector } from '../../store/selector/increase.selector';
+import { FilterGroupAction } from '../../store/actions/filter-house.action';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,7 @@ import { increaseSelector } from '../../store/selector/increase.selector';
   styleUrls: ['./home.component.less']
 })
 export class HomeComponent implements OnInit {
-  public filteredList$:Observable<characters[]> = this.store.select(filteredListByHouse);
+  public filteredList$:Observable<characters[]> = this.store.select(filteredList);
   public filteredList: characters[] = [];
   public eachHouseOnce: string[] = [];
   public eachAncestryOnce: string[] = [];
@@ -50,8 +51,14 @@ export class HomeComponent implements OnInit {
     )
   }
 
-  LoadMoreCharacters() {
+  public loadMoreCharacters(): void {
     this.store.dispatch(increaseListAction())
+  }
+
+  public handleResetFilters(): void {
+    this.store.dispatch(FilterGroupAction.selectedHouse({value: ''}))
+    this.store.dispatch(FilterGroupAction.selectedAncestry({value: ''}))
+    this.store.dispatch(FilterGroupAction.staffOrStudent({value: ''}))
   }
 
   // Refactor styles, kann man die filter zusammenfassen und nach unten reichen?

@@ -30,7 +30,7 @@ export class LikeComponent implements OnInit {
     
   }
 
-  handleLikedBar(id: string): void {
+  public handleLikedBar(id: string): void {
     this.store.dispatch(LikeAction({id}))
   }
 

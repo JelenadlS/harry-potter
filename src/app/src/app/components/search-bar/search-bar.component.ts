@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { SearchAction } from '../../store/actions/search.action';
 
@@ -8,6 +8,7 @@ import { SearchAction } from '../../store/actions/search.action';
   styleUrls: ['./search-bar.component.less']
 })
 export class SearchBarComponent implements OnInit {
+  @Input() handleResetFilters: () => void;
 
   constructor(
     private store: Store,
@@ -16,15 +17,13 @@ export class SearchBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  searchInputHandler(event: Event){
+ public searchInputHandler(event: Event): void {
     const input = (event.target as HTMLInputElement).value
     const name = input.toLocaleLowerCase()
     this.store.dispatch(SearchAction({name})) 
   }
 
-  handleOnClickSearch(){
-    // this.store.dispatch(FilterGroupAction.selectedHouse({house: ''}))
-    // this.store.dispatch(FilterGroupAction.selectedAncestry({ancestry: ''}))
-    // this.store.dispatch(FilterGroupAction.staffOrStudent({staffOrStudent: ''}))
+  public handleOnClickSearch(): void {
+    this.handleResetFilters()
   }
 }

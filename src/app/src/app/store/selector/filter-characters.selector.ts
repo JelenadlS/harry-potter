@@ -12,7 +12,7 @@ export const numberToIncrease = createFeatureSelector<number>('increase');
 export const selectedStaffOrStudent = createFeatureSelector<string>('staffOrStudent');
 export const searchName = createFeatureSelector<string>('search');
 
-export const filteredListByHouse = createSelector(
+export const filteredList = createSelector(
     selectCharacters,
     selectedHouse,
     numberToIncrease,

@@ -8,7 +8,7 @@ activity.wizard
 <fieldset class="filter__positioning">
     <div>
     <input type="radio" id="all{{title}}" name="{{title}}" value="all{{title}}"
-    checked
+    [checked]="radioActive === ''"
     (click)="onFilter('', title)"
     > 
     <label for="all{{title}}">All</label>

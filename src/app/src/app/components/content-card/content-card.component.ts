@@ -22,7 +22,7 @@ export class ContentCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-onShowMoreInfo(id: string){
+public onShowMoreInfo(id: string): void {
   this.store.dispatch(ActiveIdAction({id}))
     this.activeId$.subscribe((id:string) => {
       if(this.character.id !== id){
