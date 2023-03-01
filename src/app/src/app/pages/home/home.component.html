@@ -1,12 +1,13 @@
 <div class="page__positioning">
-    <p>HARRY POTTER</p>
+    <p class="page--headline">HARRY POTTER</p>
 
     <app-navigation></app-navigation>
     <app-search-bar [handleResetFilters]="handleResetFilters"></app-search-bar>
 
     <div class="page--content__positioning">
         <div class="page--filter">
-            <p>Filter</p>
+            <h2>Filter</h2>
+            <hr>
             <app-filter-box 
             [title]="'houses'"
             [radios]="eachHouseOnce"
