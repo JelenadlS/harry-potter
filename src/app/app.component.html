@@ -1,7 +1,8 @@
 <div class="content__positioning">
     <h1 class="content--headline">HARRY POTTER</h1>
-    <div class="content--navigation__positioning">
-        <nav>
+    <div class="content--navigation__positioning" >
+        <div *ngIf="lengthOFFavoriteList === 0" class="placeholder"></div>
+        <nav *ngIf="lengthOFFavoriteList > 0">
             <ul>
             <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
             <li><a routerLink="/favorites" routerLinkActive="active">Favorites</a></li>
