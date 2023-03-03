@@ -16,31 +16,24 @@ button {
     }
 }
 
-.page{
-
-    &--headline {
-        font-family: 'Amatic SC', cursive;
-        font-size: 60px;
-    }
-
-    &__positioning {
-    width: 500px;
-    margin: auto;
-    display: grid;
-    grid-template-rows: 1fr 1fr auto;
-    justify-items: center;
-    }
+.content{
 
     &--filter {
         margin-top: 20px;
     }
 
-    &--content {
-        &__positioning {
+
+    &--positioning {
+        display: grid;
+        grid-template-rows: 1fr auto;
+        justify-items: center;
+
+        &__second-row {
             display: grid;
-            grid-template-columns: 200px auto;
+            grid-template-columns: 200px auto
         }
     }
+
 }
 
   .card-layout {

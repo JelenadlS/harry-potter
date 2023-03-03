@@ -24,6 +24,8 @@ import { selectedAncestryReducer } from './src/app/store/reducer/filter-ancestry
 import { staffOrStudentReducer } from './src/app/store/reducer/filter-staff-or-student.reducer';
 import { searchReducer } from './src/app/store/reducer/search.reducer';
 import { SearchBarComponent } from './src/app/components/search-bar/search-bar.component';
+import { FavoritesComponent } from './src/app/pages/favorites/favorites.component';
+import { AppRoutingModule } from './src/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -36,10 +38,12 @@ import { SearchBarComponent } from './src/app/components/search-bar/search-bar.c
     ShowMoreButtonComponent, 
     FurtherInfoComponent, 
     FilterBoxComponent, 
-    SearchBarComponent
+    SearchBarComponent, 
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     HttpClientModule, 
     StoreModule.forRoot({
       characters: getDataReducer,
