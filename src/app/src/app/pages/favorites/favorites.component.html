@@ -1,4 +1,4 @@
-<div *ngFor="let character of filteredList ">
+<div *ngFor="let character of (filteredList$ | async) ">
     <ul class="list-style">
         <app-content-card [character]="character"
         ></app-content-card>
