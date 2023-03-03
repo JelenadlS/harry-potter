@@ -1,0 +1,26 @@
+
+<h4>Filter by {{title}}</h4>
+
+<fieldset class="filter filter__positioning">
+    <div>
+    <input type="radio" id="all{{title}}" name="{{title}}" value="all{{title}}"
+    [checked]="radioActive === ''"
+    (click)="onFilter('', title)"
+    > 
+    <label for="all{{title}}">All</label>
+    </div>
+    <div  *ngFor="let radio of radios">
+        <input 
+        type="radio" 
+        id="{{ radio }}" 
+        name="{{ title }}" 
+        value="{{ radio }}"
+        (click)="onFilter(radio, title)"
+        > 
+        <label 
+        for="{{ radio }}">
+            {{ radio }}
+        </label>
+    </div>
+</fieldset>
+<hr>

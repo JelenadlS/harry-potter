@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './src/app/components/navigation/navigation.component';
 import { HomeComponent } from './src/app/pages/home/home.component';
 import { ContentCardComponent } from './src/app/components/content-card/content-card.component';
 import { StoreModule } from '@ngrx/store';
@@ -19,26 +18,40 @@ import { ShowMoreButtonComponent } from './src/app/components/show-more-button/s
 import { activeIdReducer } from './src/app/store/reducer/active-id.reducer';
 import { FurtherInfoComponent } from './src/app/components/further-info/further-info.component';
 import { selectedHouseReducer } from './src/app/store/reducer/filter-house.reducer';
+import { FilterBoxComponent } from './src/app/components/filter-box/filter-box.component';
+import { selectedAncestryReducer } from './src/app/store/reducer/filter-ancestry.reducer';
+import { staffOrStudentReducer } from './src/app/store/reducer/filter-staff-or-student.reducer';
+import { searchReducer } from './src/app/store/reducer/search.reducer';
+import { SearchBarComponent } from './src/app/components/search-bar/search-bar.component';
+import { FavoritesComponent } from './src/app/pages/favorites/favorites.component';
+import { AppRoutingModule } from './src/app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent, 
-    NavigationComponent, 
     HomeComponent, 
     ContentCardComponent, 
-    AliveComponent, LikeComponent, 
+    AliveComponent, 
+    LikeComponent, 
     ShowMoreButtonComponent, 
-    FurtherInfoComponent
+    FurtherInfoComponent, 
+    FilterBoxComponent, 
+    SearchBarComponent, 
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     HttpClientModule, 
     StoreModule.forRoot({
       characters: getDataReducer,
       increase: increaseListReducer,
       likedCharacters: likeReducer,
       activeId: activeIdReducer,
-      selectedHouse: selectedHouseReducer
+      selectedHouse: selectedHouseReducer,
+      selectedAncestry: selectedAncestryReducer,
+      staffOrStudent: staffOrStudentReducer,
+      search: searchReducer,
     }),
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([CharacterEffects]),

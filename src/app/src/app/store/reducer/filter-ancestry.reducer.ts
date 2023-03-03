@@ -3,9 +3,9 @@ import { FilterGroupAction } from "../actions/filter-house.action";
 
 export const initialState: string = '';
 
-export const selectedHouseReducer = createReducer(
+export const selectedAncestryReducer = createReducer(
     initialState,
-    on(FilterGroupAction.selectedHouse, (state, action) => {
+    on(FilterGroupAction.selectedAncestry, (state, action) => {
     return action.value
-    }),
+    })
   );

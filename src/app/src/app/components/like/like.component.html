@@ -1,5 +1,11 @@
-<span class="material-symbols-outlined like__positioning"
-[style.color]="liked ? 'BE2424' : 'DAD3D3'"
-(click)="handleLikedBar(handOverId)">
-    favorite
-</span>
+<div class="positioning">
+    <span class="tooltip" *ngIf="showTooltip">like this card and it will be displayd at your favorite list!</span>
+
+    <span class="material-symbols-outlined like__positioning"
+    [style.color]="liked ? 'BE2424' : 'DAD3D3'"
+    (click)="handleLikedBar(handOverId)"
+    (mouseover)="showTooltip=true" 
+    (mouseout)="showTooltip=false">
+        favorite
+    </span>
+</div>

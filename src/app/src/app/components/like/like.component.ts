@@ -13,7 +13,8 @@ export class LikeComponent implements OnInit {
   @Input() handOverId:string = ''; 
   public liked:boolean = false;
   public likedBars$:Observable<string[]> = this.store.select(likedSelector);
-
+  public showTooltip:boolean = false;
+  
   constructor(
     private store: Store<{array:string[]}>) { }
 
@@ -30,7 +31,7 @@ export class LikeComponent implements OnInit {
     
   }
 
-  handleLikedBar(id: string): void {
+  public handleLikedBar(id: string): void {
     this.store.dispatch(LikeAction({id}))
   }
 

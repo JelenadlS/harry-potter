@@ -3,9 +3,9 @@ import { FilterGroupAction } from "../actions/filter-house.action";
 
 export const initialState: string = '';
 
-export const selectedHouseReducer = createReducer(
+export const staffOrStudentReducer = createReducer(
     initialState,
-    on(FilterGroupAction.selectedHouse, (state, action) => {
-    return action.value
+    on(FilterGroupAction.staffOrStudent, (state, action) => {
+    return state = action.value
     }),
   );

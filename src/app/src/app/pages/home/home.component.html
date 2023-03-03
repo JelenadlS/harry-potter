@@ -1,32 +1,35 @@
-<div class="page_positioning">
-    <p>HARRY POTTER</p>
+<div class="content--positioning">
 
-    <app-navigation></app-navigation>
+    <app-search-bar [handleResetFilters]="handleResetFilters"></app-search-bar>
 
-    <div class="page_positioning--filter">
-    <hr>
-        <fieldset class="page_positioning--filter__positioning">
-            <div>
-                <input type="radio" id="all" name="house" value="all"
-                checked
-                (click)="onFilterHouse('')"
-                > 
-                <label for="all">All</label>
-                </div>
-            <div *ngFor="let house of eachHouseOnce">
-            <input type="radio" id="{{ house }}" name="house" value="{{ house }}"
-            (click)="onFilterHouse(house)"
-            > 
-            <label for="{{ house }}">{{ house }}</label>
+    <div class="content--positioning__second-row">
+        <div class="page--filter">
+            <h2>Filter</h2>
+            <hr>
+            <app-filter-box 
+            [title]="'houses'"
+            [radios]="eachHouseOnce"
+            ></app-filter-box>
+            <app-filter-box 
+            [title]="'ancestry'"
+            [radios]="eachAncestryOnce"
+            ></app-filter-box>
+            <app-filter-box 
+            [title]="'staff or student'"
+            [radios]="staffOrStudent"
+            ></app-filter-box>
+        </div>
+
+        <div>
+            <div *ngFor="let character of filteredList ">
+                <ul class="list-style">
+                <app-content-card [character]="character"
+                ></app-content-card>
+                </ul>
             </div>
-        </fieldset>
-    <hr>
+            <div class="card-layout" *ngIf="(lengthOfCharactersArray === 0)">there is no further content <br> please choose another filter</div>
+            <button type="button" (click)="loadMoreCharacters()" *ngIf="(lengthOfCharactersArray > 4)">Load more</button>
+        </div>
+        
     </div>
-
-    <div *ngFor="let character of (filteredList$ | async)">
-        <ul class="list-style">
-        <app-content-card [character]="character"></app-content-card>
-    </ul>
-    </div>
-    <button type="button" (click)="LoadMoreCharacters()">Load more</button>
 </div>

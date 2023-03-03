@@ -20,10 +20,9 @@ export class ContentCardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.character.image)
   }
 
-onShowMoreInfo(id: string){
+public onShowMoreInfo(id: string): void {
   this.store.dispatch(ActiveIdAction({id}))
     this.activeId$.subscribe((id:string) => {
       if(this.character.id !== id){

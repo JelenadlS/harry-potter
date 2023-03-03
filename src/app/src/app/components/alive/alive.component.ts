@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./alive.component.less']
 })
 export class AliveComponent implements OnInit {
-@Input() aliveState:boolean = true
+@Input() aliveState:boolean = true;
   constructor() { }
 
   ngOnInit(): void {

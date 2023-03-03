@@ -10,7 +10,6 @@ export class FurtherInfoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.character)
   }
 
 }
